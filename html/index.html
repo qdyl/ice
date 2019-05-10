@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">-->
+    <link rel="shortcut icon" href="http://example.com/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 一、头部-->
+    <header>
+        <!-- 1、头部工具栏-->
+        <div class="header-navTools container">
+            <ul class="clearfix">
+                <li class="nav-item col-lg-3 pull-left"><a href="#"><img src="images/logo-icon.png" alt="" width="100%"></a></li>
+                <li class="nav-item pull-left"><a href="">我的订单</a></li>
+                <li class="nav-item pull-left"><a href="">换购须知</a></li>
+                <li class="nav-item pull-left"><a href="">关于我们</a></li>
+                <li class="nav-item pull-right login1-and-register1">
+                    <span class="login1"><img src="images/register-icon.png" alt="">请登录</span>
+                    <i class="vertical-line"></i>
+                    <span class="register1">注册</span>
+                </li>
+            </ul>
+        </div>
+        <!-- 2、请输入换币信息-->
+        <div class="header-exchangeCurrency container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="exchangeCurrency col-xs-4">
+                        <div class="help-title">请输入换币信息</div>
+                        <form class="form-horizontal" role="form">
+                            <!-- 2.1、选择币种-->
+                            <div class="form-group _form_group_wrap">
+                                <label  class="col-sm-3 control-label">选择币种</label>
+                                <div class="col-sm-9">
+                                    <div  class="form-control  _form_control currencyCategory" >
+                                        <img src="images/USD.png" alt="">美元1 USD
+                                    </div>
+                                </div>
+                                <!-- 2.1.1、币种的下拉弹窗-->
+                                <div class="pullDown-currencyCategory none">
+                                    <div class="input-and-close clearfix">
+                                        <div class="col-xs-11">
+                                            <input type="text" class="form-control user-input"  placeholder="请输入国家,目的地,币种,币种缩写">
+                                        </div>
+                                        <button type="button" class="close-btn col-xs-1"></button>
+                                    </div>
+                                    <ul class="pullDown-currencys clearfix">
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元1 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元2 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元3 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元4 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元5 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元6 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元7 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元8 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元9 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元10 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元 USD</li>
+                                        <li class="pullDown-currency col-xs-6"><img src="images/USD.png" alt="">美元 USD</li>
+                                    </ul>
+                                    <ul class="ajaxGetItem none">
+                                        <li class="ajax-item pullDown-currency col-xs-12"><span class="item-name">英镑 GBP</span> <span class="help-info">英国支持币种</span></li>
+                                        <li class="ajax-item pullDown-currency col-xs-12"><span class="item-name">美元 USD</span> <span class="help-info">美国支持币种</span></li>
+                                        <li class="ajax-item pullDown-currency col-xs-12"><span class="item-name">泰铢 THB</span> <span class="help-info">泰国支持币种</span></li>
+                                        <li class="ajax-item pullDown-currency col-xs-12"><span class="item-name">日元 JPY</span> <span class="help-info">日本支持币种</span></li>
+
+                                    </ul>
+                                </div>
+                                <!-- 2.1.2、ajax获取币种-->
+                            </div>
+                            <!-- 2.2、取钞城市-->
+                            <div class="form-group _form_group_wrap">
+                                <label  class="col-sm-3 control-label">取钞城市</label>
+                                <div class="col-sm-9">
+                                    <div  class="form-control _form_control currencyCity" >
+                                        <span class="city">上海</span>
+                                    </div>
+                                </div>
+                                <!-- 2.2.1、取钞城市的下拉-->
+                                <div class="pullDown-currencyCategory none">
+                                    <div class="input-and-close border-bottom clearfix">
+                                        <div class="col-xs-11"><span class="pullDown-title">取钞城市</span></div>
+                                        <button type="button" class="close-btn col-xs-1"></button>
+                                    </div>
+                                    <ul class="pullDown-currencys clearfix">
+                                        <li class="pullDown-currency col-xs-4 text-center">上海</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">杭州</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">长沙</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">广东</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">北京</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">上海</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">杭州</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">长沙</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">广东</li>
+                                        <li class="pullDown-currency col-xs-4 text-center">北京</li>
+                                    </ul>
+                                    <div class="input-and-close border-bottom clearfix">
+                                        <div class="col-xs-12"><h4 class="title">即将开通的城市</h4></div>
+                                    </div>
+                                    <ul class="pullDown-currencys  clearfix">
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">上海</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">杭州</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">长沙</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">广东</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">北京</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">上海</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">杭州</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">长沙</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">广东</li>
+                                        <li class="pullDown-currency col-xs-4 text-center pullDownMask">北京</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 2.3、选择网点-->
+                            <div class="form-group _form_group_wrap">
+                                <label  class="col-sm-3 control-label">选择网点</label>
+                                <div class="col-sm-9">
+                                    <div  class="form-control _form_control websiteCity" >
+                                        <span class="website">浦发银行浦东机场T2机场...</span>
+                                    </div>
+                                </div>
+                                <!-- 2.2.1、选择网点的下拉-->
+                                <div class="pullDown-currencyCategory none">
+                                    <div class="input-and-close border-bottom clearfix noMargin-bottom">
+                                        <div class="col-xs-11"><span class="pullDown-title">选择网点</span><span class="help-info">价格以100美元计</span></div>
+                                        <button type="button" class="close-btn col-xs-1"></button>
+                                    </div>
+                                    <ul class="pullDown-currencys _toCheck_website_detail clearfix">
+                                        <li class="pullDown-currency col-xs-12 clearfix pullDown-website">
+                                            <h3 class="item-title">1上海银行浦东机场T2国际出发去炒点</h3>
+                                            <p class="location-info">上海市浦东新区浦东机场T1航站楼3楼站楼楼3楼站站楼3...</p>
+                                            <p class="time-info">最早01月01日可取</p>
+                                            <div class="check-detail pull-right">
+                                                <span class="less-money">682.2起</span>
+                                                <span class="goTp-detail">查看详情</span>
+                                            </div>
+                                        </li>
+                                        <li class="pullDown-currency col-xs-12 clearfix pullDown-website">
+                                            <h3 class="item-title">2上海银行浦东机场T2国际出发去炒点</h3>
+                                            <p class="location-info">上海市浦东新区浦东机场T1航站楼3楼站楼楼3楼站站楼3...</p>
+                                            <p class="time-info">最早01月01日可取</p>
+                                            <div class="check-detail pull-right">
+                                                <span class="less-money">682.2起</span>
+                                                <span class="goTp-detail">查看详情</span>
+                                            </div>
+                                        </li>
+                                        <li class="pullDown-currency col-xs-12 clearfix pullDown-website">
+                                            <h3 class="item-title">3上海银行浦东机场T2国际出发去炒点</h3>
+                                            <p class="location-info">上海市浦东新区浦东机场T1航站楼3楼站楼楼3楼站站楼3...</p>
+                                            <p class="time-info">最早01月01日可取</p>
+                                            <div class="check-detail pull-right">
+                                                <span class="less-money">682.2起</span>
+                                                <span class="goTp-detail">查看详情</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 2.2.2、网点详情-->
+                                <ul class="website-detail-wrap ">
+                                    <li class="_website-detail-Item none">
+                                        <!-- 网点名称-->
+                                        <div class="webDetail-title clearfix">
+                                            <span class="title pull-left">网点详情</span>
+                                            <i class="webDetail-close pull-right"></i>
+                                        </div>
+                                        <!-- 网点位置-->
+                                        <div class="webDetail-location">
+                                            <h3 class="title-location">111111111111浦发银行浦东机场T2国际出发取钞点</h3>
+                                            <div>
+                                                <span class="choose-location pull-right">选择</span>
+                                                <span class="Earliest-date">最早01月01日可取</span>
+                                                <p class="exchange-rate">日元汇率 <span class="rate-info">100JPY＝6.1368CNY起</span></p>
+                                            </div>
+                                        </div>
+                                        <!-- 网点详细信息-->
+                                        <ul class="webDetail-infos clearfix">
+                                            <li class="webDetail-infos-title">网点信息</li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2">取钞地址：<br></span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                上海市浦东新区浦东机场T1航站楼3楼站楼(位于梅川路步行街，靠近百联中环购物 广场)
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2">营业时间：</span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                <span>周一～周日 10:00-19:00</span>
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2"><span>联系电话：</span> <br></span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                <span>021-56565656</span>
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2"><span>网点环境：</span> <br></span>
+                                                <!-- 网点环境轮播图-->
+                                                <div class="websiteInfoRight col-xs-6">
+                                                    <div id="myCarousel" class="carousel slide">
+                                                        <!-- 轮播（Carousel）指标 -->
+                                                        <ol class="carousel-indicators">
+                                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                        </ol>
+                                                        <!-- 轮播（Carousel）项目 -->
+                                                        <div class="carousel-inner">
+                                                            <div class="item active">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="First slide">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="Second slide">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="Third slide">
+                                                            </div>
+                                                        </div>
+                                                        <!-- 轮播（Carousel）导航 -->
+                                                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        <!-- 退款规则-->
+                                        <div class="webDetail-refundRule ">
+                                            <p class="webDetail-refundRule-title">退款规则</p>
+                                            <p class="rule-text">1.该网点订单支付当天首次退款免手续费，支付当天第二次退款及次日以后退款将收取您支付订单总金额3%作为手续费。 </p>
+                                            <p class="rule-text">2.该网点订单支付当天首次退款免手续费，支付当天第二次退款及次日以后退款将收取您支付订单总金额3%作为手续费。</p>
+                                        </div>
+                                    </li>
+                                    <li class="_website-detail-Item none">
+                                        <!-- 网点名称-->
+                                        <div class="webDetail-title clearfix">
+                                            <span class="title pull-left">网点详情</span>
+                                            <i class="webDetail-close pull-right"></i>
+                                        </div>
+                                        <!-- 网点位置-->
+                                        <div class="webDetail-location">
+                                            <h3 class="title-location">2222222浦发银行浦东机场T2国际出发取钞点</h3>
+                                            <div>
+                                                <span class="choose-location pull-right">选择</span>
+                                                <span class="Earliest-date">最早01月01日可取</span>
+                                                <p class="exchange-rate">日元汇率 <span class="rate-info">100JPY＝6.1368CNY起</span></p>
+                                            </div>
+                                        </div>
+                                        <!-- 网点详细信息-->
+                                        <ul class="webDetail-infos clearfix">
+                                            <li class="webDetail-infos-title">网点信息</li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2">取钞地址：<br></span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                上海市浦东新区浦东机场T1航站楼3楼站楼(位于梅川路步行街，靠近百联中环购物 广场)
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2">营业时间：</span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                <span>周一～周日 10:00-19:00</span>
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2"><span>联系电话：</span> <br></span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                <span>021-56565656</span>
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2"><span>网点环境：</span> <br></span>
+                                                <!-- 网点环境轮播图-->
+                                                <div class="websiteInfoRight col-xs-6">
+                                                    <div id="myCarousel" class="carousel slide">
+                                                        <!-- 轮播（Carousel）指标 -->
+                                                        <ol class="carousel-indicators">
+                                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                        </ol>
+                                                        <!-- 轮播（Carousel）项目 -->
+                                                        <div class="carousel-inner">
+                                                            <div class="item active">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="First slide">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="Second slide">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="Third slide">
+                                                            </div>
+                                                        </div>
+                                                        <!-- 轮播（Carousel）导航 -->
+                                                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        <!-- 退款规则-->
+                                        <div class="webDetail-refundRule ">
+                                            <p class="webDetail-refundRule-title">退款规则</p>
+                                            <p class="rule-text">1.该网点订单支付当天首次退款免手续费，支付当天第二次退款及次日以后退款将收取您支付订单总金额3%作为手续费。 </p>
+                                            <p class="rule-text">2.该网点订单支付当天首次退款免手续费，支付当天第二次退款及次日以后退款将收取您支付订单总金额3%作为手续费。</p>
+                                        </div>
+                                    </li>
+                                    <li class="_website-detail-Item none">
+                                        <!-- 网点名称-->
+                                        <div class="webDetail-title clearfix">
+                                            <span class="title pull-left">网点详情</span>
+                                            <i class="webDetail-close pull-right"></i>
+                                        </div>
+                                        <!-- 网点位置-->
+                                        <div class="webDetail-location">
+                                            <h3 class="title-location">333333浦发银行浦东机场T2国际出发取钞点</h3>
+                                            <div>
+                                                <span class="choose-location pull-right">选择</span>
+                                                <span class="Earliest-date">最早01月01日可取</span>
+                                                <p class="exchange-rate">日元汇率 <span class="rate-info">100JPY＝6.1368CNY起</span></p>
+                                            </div>
+                                        </div>
+                                        <!-- 网点详细信息-->
+                                        <ul class="webDetail-infos clearfix">
+                                            <li class="webDetail-infos-title">网点信息</li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2">取钞地址：<br></span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                上海市浦东新区浦东机场T1航站楼3楼站楼(位于梅川路步行街，靠近百联中环购物 广场)
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2">营业时间：</span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                <span>周一～周日 10:00-19:00</span>
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2"><span>联系电话：</span> <br></span>
+                                                <span class="websiteInfoRight col-xs-10">
+                                                <span>021-56565656</span>
+                                            </span>
+                                            </li>
+                                            <li class="row clearfix">
+                                                <span class="websiteInfoLeft col-xs-2"><span>网点环境：</span> <br></span>
+                                                <!-- 网点环境轮播图-->
+                                                <div class="websiteInfoRight col-xs-6">
+                                                    <div id="myCarousel" class="carousel slide">
+                                                        <!-- 轮播（Carousel）指标 -->
+                                                        <ol class="carousel-indicators">
+                                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                        </ol>
+                                                        <!-- 轮播（Carousel）项目 -->
+                                                        <div class="carousel-inner">
+                                                            <div class="item active">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="First slide">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="Second slide">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="images/wangdian-huanjing-img.png" alt="Third slide">
+                                                            </div>
+                                                        </div>
+                                                        <!-- 轮播（Carousel）导航 -->
+                                                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        <!-- 退款规则-->
+                                        <div class="webDetail-refundRule ">
+                                            <p class="webDetail-refundRule-title">退款规则</p>
+                                            <p class="rule-text">1.该网点订单支付当天首次退款免手续费，支付当天第二次退款及次日以后退款将收取您支付订单总金额3%作为手续费。 </p>
+                                            <p class="rule-text">2.该网点订单支付当天首次退款免手续费，支付当天第二次退款及次日以后退款将收取您支付订单总金额3%作为手续费。</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!-- 2.4、取钞日期-->
+                            <div class="form-group">
+                                <label  class="col-sm-3 control-label">取钞日期</label>
+                                <div class="col-sm-9 ">
+                                    <!-- 自己正常-->
+                                   <!-- <div  class=" currencyDate form_date date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                        <input type="text" class="date-input " readonly>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    </div>-->
+                                   <!-- <input class="form-control" id="disabledInput" type="text" placeholder="" disabled>
+                                    <i class="date-icon"></i>-->
+                                    <div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                        <input class="form-control disabledInput" size="16" type="text" value="" readonly>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2.5、确定-->
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="button" class="btn btn-default btn-block" id="exchangeBtn">立即兑换</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3、优势-->
+        <div class="header-advantages container-fluid">
+            <div class="container">
+                <ul class="row clearfix">
+                    <li class="advantage-item col-xs-4 text-center">
+                        <div class="item ">
+                            <img src="images/kuaidi.png" alt="快递送钞票方便到家">
+                            <span class="adv-info">快递送钞 <br> 方便到家</span>
+                        </div>
+                    </li>
+                    <li class="advantage-item col-xs-4 text-center">
+                        <div class="item ">
+                            <img src="images/baoz.png" alt="专业服务安全保证">
+                            <span class="adv-info">专业服务 <br> 安全保证</span>
+                        </div>
+                    </li>
+                    <li class="advantage-item col-xs-4 text-center">
+                        <div class="item ">
+                            <img src="images/wangdian.png" alt="网点齐全避免排队">
+                            <span class="adv-info">网点齐全 <br> 避免排队</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <!-- 二、首页主体-->
+    <main class="container">
+        <div class="row">
+            <!-- 1、币种信息-->
+            <section class="main-currencyInfos clearfix">
+                <!-- 1.1、币种类别-->
+                <div class="main-currencyCategory pull-left">
+                    <ul class="main-items">
+                        <li class="main-item item-title clearfix">
+                            <div class="col-xs-7">币种</div>
+                            <div class="col-xs-2">平台汇率</div>
+                            <div class="col-xs-3"></div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-7 species"><img src="images/USD.png" alt="">美元 USD</div>
+                            <div class="col-xs-2 rate">666.6</div>
+                            <div class="col-xs-3 hot text-center"><img src="images/hot1-img.png" alt="">限时特惠 </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 1.2、取钞城市-->
+                <div class="main-citys pull-right">
+                    <!-- 已经开通的城市-->
+                    <ul class="main-items">
+                        <li class="main-item item-title clearfix">
+                            <div class="col-xs-12">取钞城市</div>
+                        </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-4 city-item text-center">上海</div>
+                            <div class="col-xs-4 city-item text-center">北京</div>
+                            <div class="col-xs-4 city-item text-center">广州</div>
+                            <div class="col-xs-4 city-item text-center">杭州</div>
+                            <div class="col-xs-4 city-item text-center">大连</div>
+                            <div class="col-xs-4 city-item text-center">厦门</div> <div class="col-xs-4 city-item text-center">大连</div>
+                            <div class="col-xs-4 city-item text-center">厦门</div>
+                            <div class="col-xs-4 city-item text-center">上海</div>
+                            <div class="col-xs-4 city-item text-center">北京</div>
+                            <div class="col-xs-4 city-item text-center">广州</div>
+                            <div class="col-xs-4 city-item text-center">杭州</div>
+                            <div class="col-xs-4 city-item text-center">大连</div>
+                            <div class="col-xs-4 city-item text-center">厦门</div> <div class="col-xs-4 city-item text-center">大连</div>
+                        </li>
+
+                    </ul>
+                    <!-- 即将开通的城市-->
+                    <ul class="main-items">
+                        <li class="main-item item-title clearfix">
+                            <div class="col-xs-12">即将开通的城市</div>
+                        </li>
+                        <li class="main-item main-itemMask clearfix">
+                            <div class="col-xs-4 city-item text-center">上海</div>
+                            <div class="col-xs-4 city-item text-center">北京</div>
+                            <div class="col-xs-4 city-item text-center">广州</div>
+                            <div class="col-xs-4 city-item text-center">杭州</div>
+                            <div class="col-xs-4 city-item text-center">大连</div>
+                            <div class="col-xs-4 city-item text-center">厦门</div>
+                            <div class="col-xs-4 city-item text-center">上海</div>
+                            <div class="col-xs-4 city-item text-center">北京</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 2、新闻资讯、网点查询-->
+            <section class="newsInfo-and-websiteQuery clearfix">
+                <!-- 2.1、新闻资讯-->
+                <div class="main-newsInfo pull-left">
+                    <ul class="main-items border-grey">
+                        <li class="main-item item-title clearfix">
+                            <div class="col-xs-7">新闻资讯</div>
+                            <div class="col-xs-5 more">更多 </div>
+                        </li>
+                        <li class="main-item clearfix">
+                        <div class="col-xs-3 news-img"><img src="images/news-img.png" alt=""></div>
+                        <div class="col-xs-9 news-info">
+                            <h4 class="title">西班牙逮捕委内瑞拉前情报主管 美国寻求引渡</h4>
+                            <p class="text">西班牙警方分隔符复古风格12日依据大幅度的丰富的的地方放大幅度美国方面先前签发的缉毒逮捕令，在首都马德里逮捕委内瑞拉军方情报机构前主管乌戈·卡首都马德里逮捕委内瑞拉军方情报机构...</p>
+                            <p class="date-time">2018-12-03 22:00</p>
+                        </div>
+                    </li>
+                        <li class="main-item clearfix">
+                            <div class="col-xs-3 news-img"><img src="images/news-img.png" alt=""></div>
+                            <div class="col-xs-9 news-info">
+                                <h4 class="title">西班牙逮捕委内瑞拉前情报主管 美国寻求引渡</h4>
+                                <p class="text">西班牙警方分隔符复古风格12日依据大幅度的丰富的的地方放大幅度美国方面先前签发的缉毒逮捕令，在首都马德里逮捕委内瑞拉军方情报机构前主管乌戈·卡首都马德里逮捕委内瑞拉军方情报机构...</p>
+                                <p class="date-time">2018-12-03 22:00</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="advertise">
+                        <a href="##"><img src="images/adverse-img.png" alt=""></a>
+                    </div>
+                </div>
+                
+                <!-- 2.2、网点查询-->
+                <div class="main-websiteQery pull-right">
+                    <ul class="main-items">
+                        <li class="main-item item-title noMargin-bottom clearfix">
+                            <div class="col-xs-3">网点查询</div>
+                            <div class="col-xs-9">
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="name">名称</label>
+                                        <input type="text" class="form-control" id="name" placeholder="请输入名称">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">提交</button>
+                                </form>
+                            </div>
+                        </li>
+                        <li class="pullDown-currency col-xs-12 clearfix pullDown-website">
+                            <h3 class="item-title_">上海银行浦东机场T2国际出发去炒点</h3>
+                            <p class="location-info">上海市浦东新区浦东机场T1航站楼3楼站楼楼3楼站站楼3...</p>
+                            <p class="time-info">最早01月01日可取</p>
+                            <div class="check-detail pull-right">
+                                <span class="less-money">682.2起</span>
+                                <span class="goTp-detail">查看详情</span>
+                            </div>
+                        </li>
+                        <li class="pullDown-currency col-xs-12 clearfix pullDown-website">
+                            <h3 class="item-title_">上海银行浦东机场T2国际出发去炒点</h3>
+                            <p class="location-info">上海市浦东新区浦东机场T1航站楼3楼站楼楼3楼站站楼3...</p>
+                            <p class="time-info">最早01月01日可取</p>
+                            <div class="check-detail pull-right">
+                                <span class="less-money">682.2起</span>
+                                <span class="goTp-detail">查看详情</span>
+                            </div>
+                        </li>
+                        <li class="pullDown-currency col-xs-12 clearfix pullDown-website">
+                            <h3 class="item-title_">上海银行浦东机场T2国际出发去炒点</h3>
+                            <p class="location-info">上海市浦东新区浦东机场T1航站楼3楼站楼楼3楼站站楼3...</p>
+                            <p class="time-info">最早01月01日可取</p>
+                            <div class="check-detail pull-right">
+                                <span class="less-money">682.2起</span>
+                                <span class="goTp-detail">查看详情</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3、下一页-->
+            <ul class="pagination main_NextPage pull-right">
+                <li><a href="###"><</a></li>
+                <li><a class="hover-a" href="###">1</a></li>
+                <li><a href="###">2</a></li>
+                <li><a href="###">3</a></li>
+                <li><a href="###">4</a></li>
+                <li><a href="###">5</a></li>
+                <li><a href="###"> > </a></li>
+            </ul>
+        </div>
+    </main>
+    <!-- 三、底部-->
+    <footer>
+        <!-- 1、兑换流程-->
+        <div class="footer-exchangeFlow container-fluid">
+            <div class="container">
+                <h3 class="flow-title">兑换流程</h3>
+
+            </div>
+        </div>
+        <!-- 2、底部站点-->
+        <div class="footer-links container-fluid">
+            <div class="container">
+                <ul class="row footer-link-items noMargin-bottom">
+                    <li class="col-xs-4 ">
+                        <p class="footer-item"><i class="noticce"></i>换购须知</p>
+                        <p class="footer-item"><i class="about-us"></i>关于我们</p>
+                    </li>
+                    <li class="col-xs-4 ">
+                        <p class="footer-item"><i class="Privacy"></i>隐私条例</p>
+                        <p class="footer-item"><i class="tel"></i>客服电话：13515894562</p>
+                    </li>
+                    <li class="col-xs-4 text-center downApp">
+                        <p class="footer-item">
+                            <img src="images/ewm.png" alt=""> <br>
+                            下载App
+                        </p>
+                    </li>
+                </ul>
+                <div class="copy-right">
+                    Copyright ©1692009-2024 版权所有 icexxxx <br>
+                    备案信息12edjfcklj
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 四、账号密码登录、注册、实名认证-->
+    <section class="container-fluid fullScreenMask-and-springWindows">
+        <!-- 遮罩层-->
+        <div class="fullScreenMask none"></div>
+        <!-- 弹窗：登录、注册、认证-->
+        <div class="container Spring-windows">
+            <ul class="row clearfix">
+                <!-- 弹窗1：登录-->
+                <li class="springWindowItem springWindowItem-login col-xs-7 none">
+                    <!-- 左login图-->
+                    <div class="springItem springItem-left pull-left">
+                        <img src="images/logo-img.png" alt="艾西益外币兑换">
+                        <p class="logo-intro">艾西益外币兑换</p>
+                    </div>
+                    <!-- 右login框-->
+                    <div class="springItem springItem-right pull-right">
+                        <div class="tabItemTitle col-xs-8 col-lg-offset-2">
+                            <span class="LoginSpan LoginSpan-active col-xs-6">账号密码登录</span>
+                            <span class="LoginSpan col-xs-6">短信验证登录</span>
+                        </div>
+                        <i class="close-Spring-windows"></i>
+                        <div class="springItemInput">
+                            <!-- 账号密码登录-->
+                            <form role="form" class="col-xs-8 col-lg-offset-2">
+                                <div class="form-group">
+                                    <label for="name">名称</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请输入您的帐号">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">密码</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请输入您的密码">
+                                </div>
+                                <button type="submit" class="btn btn-default btn-block _accountPass_login">登录</button>
+                                <div class="userHelp-info clearfix">
+                                    <span class="_noAccount_register pull-left">没有账号？<span class="register2">注册</span></span>
+                                    <span class="_forgetPass pull-right">忘记密码</span>
+                                </div>
+                            </form>
+                            <!-- 短信验证登录-->
+                            <form role="form" class="col-xs-8 col-lg-offset-2 none">
+                                <div class="form-group">
+                                    <label for="name">手机号</label>
+                                    <input type="text" class="form-control" id="name1" placeholder="请输入您的手机号">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">验证码</label>
+                                    <div>
+                                        <input type="text" class="form-control getIdentifyCode-input" id="name2" placeholder="请输入您的验证码">
+                                        <button type="submit" class="btn btn-default getIdentifyCode-btn">获取验证码</button>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-default btn-block _getIdentifyCode_login">登录</button>
+                                <div class="userHelp-info clearfix">
+                                    <span class="noAccount pull-left">没有账号？<span class="register2">注册</span></span>
+                                    <span class="forgetPass pull-right">忘记密码</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <!-- 弹窗2：注册-->
+                <li class="springWindowItem springWindowItem-register col-xs-7 _registers_ none">
+                    <!-- 左login图-->
+                    <div class="springItem springItem-left pull-left">
+                        <img src="images/logo-img.png" alt="艾西益外币兑换">
+                        <p class="logo-intro">艾西益外币兑换</p>
+                    </div>
+                    <!-- 右login框-->
+                    <div class="springItem springItem-right pull-right">
+                        <div class="tabItemTitle col-xs-8 col-lg-offset-2">欢迎注册</div>
+                        <i class="close-Spring-windows"></i>
+                        <div class="springItemInput">
+                            <form role="form" class="col-xs-8 col-lg-offset-2">
+                                <div class="form-group">
+                                    <label for="name">手机号</label>
+                                    <input type="text" class="form-control" id="name1" placeholder="请输入您的手机号">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">验证码</label>
+                                    <div>
+                                        <input type="text" class="form-control getIdentifyCode-input" id="name2" placeholder="请输入您的验证码">
+                                        <button type="submit" class="btn btn-default getIdentifyCode-btn">获取验证码</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">密码</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请输入您的密码">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">重复密码</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请再次输入您的密码">
+                                </div>
+                                <button type="button" class="btn btn-default btn-block _nextStep">下一步</button>
+                                <div class="userHelp-info clearfix">
+                                    <span class=" _hasAccount_login pull-left">已有账号,<span class="login2">立即登录</span></span>
+                                    <span class="_forgetPass pull-right">忘记密码</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <!-- 弹窗3：忘记密码-->
+                <li class="springWindowItem springWindowItem-ResetPass col-xs-7 _registers_ none">
+                    <!-- 左login图-->
+                    <div class="springItem springItem-left pull-left">
+                        <img src="images/logo-img.png" alt="艾西益外币兑换">
+                        <p class="logo-intro">艾西益外币兑换</p>
+                    </div>
+                    <!-- 右login框-->
+                    <div class="springItem springItem-right pull-right">
+                        <div class="tabItemTitle col-xs-8 col-lg-offset-2">忘记密码</div>
+                        <i class="close-Spring-windows"></i>
+                        <div class="springItemInput">
+                            <form role="form" class="col-xs-8 col-lg-offset-2">
+                                <div class="form-group">
+                                    <label for="name">手机号</label>
+                                    <input type="text" class="form-control" id="name1" placeholder="请输入您的手机号">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">验证码</label>
+                                    <div>
+                                        <input type="text" class="form-control getIdentifyCode-input" id="name2" placeholder="请输入您的验证码">
+                                        <button type="submit" class="btn btn-default getIdentifyCode-btn">获取验证码</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">密码</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请输入您的密码">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">重复密码</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请再次输入您的密码">
+                                </div>
+                                <button type="button" class="btn btn-default btn-block _hasFinished">完成</button>
+                                <div class="userHelp-info clearfix">
+                                    <span class="_noAccount_register _hasAccount_login pull-left">已有账号,<span class="login2">立即登录</span></span>
+                                    <span class="_forgetPass pull-right">忘记密码</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <!-- 弹窗4：实名认证-->
+                <li class="springWindowItem springWindowItem-RealName col-xs-7 _registers_ none">
+                    <!-- 左login图-->
+                    <div class="springItem springItem-left pull-left">
+                        <img src="images/logo-img.png" alt="艾西益外币兑换">
+                        <p class="logo-intro">艾西益外币兑换</p>
+                    </div>
+                    <!-- 右login框-->
+                    <div class="springItem springItem-right pull-right">
+                        <div class="tabItemTitle col-xs-8 col-lg-offset-2">实名认证</div>
+                        <i class="close-Spring-windows"></i>
+                        <div class="springItemInput">
+                            <form role="form" class="col-xs-8 col-lg-offset-2">
+                                <div class="form-group">
+                                    <label for="name">姓名</label>
+                                    <input type="text" class="form-control" id="name1" placeholder="请输入您的姓名">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">身份证</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请输入您的身份证号码">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">重复密码</label>
+                                    <input type="text" class="form-control" id="name" placeholder="请再次输入您的密码">
+                                </div>
+                                <button type="button" class="btn btn-default btn-block _finishedRegister">完成注册</button>
+                                <div class="userHelp-info clearfix">
+                                    <span class=" _hasAccount_login pull-left">已有账号,<span class="login2">立即登录</span></span>
+                                    <span class="_forgetPass pull-right">忘记密码</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 弹窗：个人申购申请书-->
+        <div class="person-application-form posi_center none" >
+            <div class="Application-title clearfix">
+                <span class="title pull-left">网点详情</span>
+                <i class="Application-close pull-right"></i>
+            </div>
+            <div class="Application-text">
+                <p class="text">《中华人民共和国外汇管理条例》,《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》</p>
+                <p class="text">《中华人民共和国外汇管理条例》,《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》</p>
+                <p class="text">《中华人民共和国外汇管理条例》,《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》</p>
+                <p class="text">《中华人民共和国外汇管理条例》,《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》</p>
+                <p class="text">《中华人民共和国外汇管理条例》,《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》</p>
+                <p class="text">《中华人民共和国外汇管理条例》,《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》.《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》《国际收支统计申报办法》</p>
+            </div>
+            <form role="form" class="col-xs-12 clearfix">
+                <div class="checkbox Application-checkbox">
+                    <label class="Application-label"><input type="checkbox" >已阅读，本人已知晓上述内容</label>
+                    <div class="Application-checkbox-mask"></div>
+                </div>
+                <div class="button-wrap col-xs-6 col-xs-offset-3">
+                    <button type="button" class="btn btn-default btn-block">
+                        购汇前须阅读申请书( <i class="Countdown">30</i>s)
+                    </button>
+                    <div class="Application-button-mask "></div>
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
+<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/common.js"></script>
+<script>
+;
+
+
+</script>
+</html>

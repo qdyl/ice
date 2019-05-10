@@ -1,0 +1,1083 @@
+/* 1、样式重置*/
+ul,ol,li{
+  list-style: none;
+  padding-left: 0;
+}
+.none{
+  display: none;
+}
+.text-center{
+  text-align: center;
+}
+
+.border-grey{
+  border: 1px solid #D5D5D5;
+}
+.noMargin-bottom{
+  margin-bottom: 0!important;
+}
+.noPadding-left{
+  padding-left: 0!important;
+}
+.form-group{
+  position: relative;
+}
+i{
+  display: inline-block;
+}
+a{
+  cursor: pointer;
+}
+.posi_center{
+  position: fixed;
+  top: 25%;
+  left: 50%;
+
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  -o-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+
+}
+
+.radio_input[type=radio]:before,.checkbox_input[type=checkbox]:before {
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 2px;
+  left: 13px;
+  content: "";
+  color: #fff;
+  display: inline-block;
+  visibility: visible;
+  padding: 3px 3px;
+  border-radius: 50%;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+}
+.radio_input[type=radio]:checked:after,.checkbox_input[type=checkbox]:checked:after {
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+  content: "";
+  display: block;
+  position: relative;
+  top: -1px;
+  left: 0px;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: #1493fa;
+  font-weight: 400;
+  z-index: 1;
+}
+/*----------------------------首页------------------------------------*/
+/* 2.1、首页（头部）：工具栏*/
+header{
+  border-bottom: 1px solid #eee;
+}
+.header-navTools{
+  height: 80px;
+  line-height: 80px;
+  ul{
+    padding-left: 0;
+    .nav-item{
+      padding: 0 20px;
+      font-size: 16px;
+      a{
+        color: #9E9E9E;
+      }
+      span{
+        display: inline-block;
+        color: #9E9E9E;
+        cursor: pointer;
+      }
+      img{
+        margin-top: -2px;
+        margin-right: 6px;
+      }
+      .register{
+        padding: 0 10px;
+      }
+      .login{
+        img{
+          margin-right: 10px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .vertical-line{
+        margin: 0 0 0 8px;
+        vertical-align: middle;
+        width: 1px;
+        height: 15px;
+        background: #D5D5D5;
+
+      }
+    }
+    .nav-item.nav-item-hover{
+      a{
+        color: #1882FF;
+      }
+    }
+  }
+}
+
+/* 2.2、首页（头部）：请输入换币信息*/
+.header-exchangeCurrency{
+  height: 340px;
+  background: url("../images/banner-bg.png") no-repeat left/100% 100% ;
+  .exchangeCurrency{
+    background: #fff;
+    margin-top: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    .help-title{
+      margin: 0 -15px 15px;
+      padding-left: 10px;
+      height: 40px;
+      line-height: 40px;
+      background: #7e7e7e;
+      color: #fff;
+      font-size: 14px;
+    }
+    .form-horizontal{
+      background: #fff;
+      ._form_control{
+        position: relative;
+        padding-right: 0;
+        img{
+          margin-right: 8px;
+          vertical-align: text-bottom;
+          width: 24px;
+          height: 15px;
+        }
+        .date-input{
+          width: 100%;
+          outline: none;
+          border: none;
+        }
+      }
+      ._form_control:after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        right: 0;
+        width: 40px;
+        height: 20px;
+        border-left: 1px solid #D5D5D5;
+        background: url('../images/arrow-down.png') no-repeat center center/10px 10px;
+      }
+      /* ._form_control.currencyDate:after{
+         background: url('../images/data-icon.png') no-repeat center center/15px 15px;
+       }*/
+      .disabledInput{
+        border-right: none;
+        background: #fff;
+      }
+      .input-group-addon{
+        background: #fff;
+        border-left: none;
+
+      }
+      .website{
+        display: inline-block;
+        width: 80%;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+    }
+    .btn{
+      color: #fff;
+      background: #1882ff;
+    }
+  }
+}
+
+/* 2.3、首页（头部）：选择币种、取钞城市、选择网点、的下拉框-----公用*/
+.pullDown-currencyCategory{
+  position: absolute;
+  z-index: 6;
+  left: 112px;
+  top: 40px;
+  width: 500px;
+  padding: 20px 0;
+  background: #ffffff;
+  -webkit-box-shadow:  1px 0px 10px rgba(0,0,0,.2);
+  -moz-box-shadow:  1px 0px 10px rgba(0,0,0,.2);
+  box-shadow:  1px 0px 10px rgba(0,0,0,.2);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  /* 关闭按钮*/
+  .input-and-close{
+    margin-bottom: 15px;
+    .user-input{
+      -webkit-box-shadow:  0px 1px 1px rgba(0,0,0,.1);
+      -moz-box-shadow:  0px 1px 1px rgba(0,0,0,.1);
+      box-shadow:  0px 1px 1px rgba(0,0,0,.1);
+      border: none;
+      border-top-color: #000;
+    }
+    .pullDown-title{
+      font-size: 14px;
+      color: #4A4A4A;
+      font-weight: 600;
+    }
+    .help-info{
+      margin-left: 10px;
+      font-size: 12px;
+      color: #9B9B9B;
+    }
+
+    .close-btn{
+      position: relative;
+      top: -10px;
+      height: 30px;
+      border: none;
+      background: url("../images/close-icon.png") no-repeat center center/14px 14px;
+    }
+    .close-btn:focus{
+      outline: none;
+    }
+  }
+  .border-bottom{
+    border-bottom: 1px solid #D5D5D5;
+  }
+  /* 选择币种、取钞城市：的下拉list*/
+  .pullDown-currency{
+    padding: 10px 20px;
+    font-size: 16px;
+    &.hover-color{
+      color: #1882FF;
+    }
+    img{
+      margin-right: 8px;
+      width: 24px;
+      height: 15px;
+    }
+  }
+  /* 选择币种：ajax获取的币种*/
+  .ajaxGetItem{
+    .ajax-item{
+      //padding: 8px 0 8px 25px;
+      &:hover{
+        background: #ecf5ff;
+      }
+      .item-name{
+        margin-right: 15px;
+        color: #4A4A4A;
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+      .help-info{
+        font-size: 12px;
+        color: #D5D5D5;
+      }
+    }
+
+
+  }
+  /* 选择网点：的下拉list*/
+  .pullDown-website{
+    padding: 0 20px 10px;
+    border-bottom: 1px solid #D5D5D5;
+    .item-title{
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #4A4A4A;
+    }
+    p{
+      padding-left: 20px;
+      font-size: 12px;
+      color: #9B9B9B;
+      &.location-info{
+        vertical-align: top;
+        background: url("../images/location-icon.png") no-repeat left center/14px 14px;
+      }
+      &.time-info{
+        vertical-align: top;
+        background: url("../images/time-icon.png") no-repeat left center/12px 12px;
+
+      }
+    }
+    &:hover{
+      background: #ecf5ff;
+    }
+    &.hover-bg{
+      background: #ecf5ff;
+    }
+    .less-money{
+      margin-right: 15px;
+      color: #FF2626;
+      font-size: 12px;
+    }
+    .goTp-detail{
+      padding: 15px 5px;
+      font-size: 14px;
+      color: #1882FF;
+      cursor: pointer;
+    }
+
+  }
+  .pullDownMask{
+    position: relative;
+    z-index: 6;
+    background: transparent;
+    opacity: .5;
+  }
+}
+
+/* 网点详情*/
+.website-detail-wrap{
+  position: absolute;
+  left: 280px;
+  top: 50px;
+  z-index: 8;
+  width: 750px;
+  background: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  .webDetail-title{
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    background: #1882FF;
+    .title{
+      font-size: 16px;
+      color: #fff;
+    }
+    .webDetail-close{
+      margin-top: 5px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      background: url("../images/website-close.png") no-repeat center/14px 14px;
+    }
+  }
+  /* 2、网站位置*/
+  .webDetail-location{
+    padding: 0 15px;
+    font-size: 16px;
+    border-bottom: 8px solid #F7F7F7;
+    .title-location{
+      font-size: 24px;
+      color: #333333;
+    }
+    .choose-location{
+      padding: 4px 18px;
+      color: #1882FF;
+      border: 1px solid #1882FF;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+    }
+    .Earliest-date{
+      padding: 5px 0;
+      color: #7E7E7E;
+    }
+    .exchange-rate{
+      margin-top: 5px;
+      //font-size: 16px;
+      color: #7E7E7E;
+    }
+    .rate-info{
+      color: #FF2626;
+    }
+  }
+  /* 3、网点详细信息*/
+  .webDetail-infos{
+    padding: 10px 15px;
+    border-bottom: 8px solid #F7F7F7;
+    .webDetail-infos-title{
+      padding-left: 30px;
+      background: #000;
+      font-size: 18px;
+      font-weight: 600;
+      color: #4A4A4A;
+      vertical-align: top;
+      background: url("../images/wangdian1.png") no-repeat left top/22px 22px;
+    }
+    li{
+      margin: 10px 0;
+    }
+    .websiteInfoLeft,.websiteInfoRight{
+      padding: 0;
+      font-size: 16px;
+      color: #333333;
+    }
+  }
+  /* 4、退款规则*/
+  .webDetail-refundRule{
+    padding: 0 15px;
+    .webDetail-refundRule-title{
+      padding-left: 30px;
+      background: #000;
+      font-size: 18px;
+      font-weight: 600;
+      color: #4A4A4A;
+      vertical-align: top;
+      background: url("../images/wangdian-tuikuan.png") no-repeat left top/22px 22px;
+    }
+    .rule-text{
+      margin: 15px 0;
+      color: #333333;
+      font-size: 16px;
+    }
+  }
+
+
+}
+
+
+/* 2.4、首页（头部）：优势*/
+.header-advantages{
+  margin-bottom: 20px;
+  height: 90px;
+  background: #f7f7f7;
+  .advantage-item{
+    padding: 10px 0;
+    img{
+      float: left;
+    }
+    .adv-info{
+      margin-left: 10px;
+      margin-top: 15px;
+      line-height: 20px;
+      float: left;
+    }
+    .item{
+      position: relative;
+      //left: 50%;
+      -webkit-transform: translateX(30%);
+      -moz-transform: translateX(30%);
+      -ms-transform: translateX(30%);
+      -o-transform: translateX(30%);
+      transform: translateX(30%);
+
+    }
+
+  }
+}
+
+/* 3.首页（主体）：币种、平台汇率*/
+.main-currencyInfos{
+  margin-bottom: 20px;
+  /* 3.1、币种类别*/
+  .main-currencyCategory{
+    width: 60%;
+    height: 500px;
+    overflow: hidden;
+    border: 1px solid #D5D5D5;
+  }
+  /* 3.2、取钞城市*/
+  .main-citys{
+    border: 1px solid #D5D5D5;
+    width: 38%;
+    height: 500px;
+    overflow: hidden;
+  }
+}
+
+/* 3、首页（主体）：新闻资讯、网点查询*/
+.newsInfo-and-websiteQuery{
+  /* 新闻资讯*/
+  .main-newsInfo{
+    width: 60%;
+    height: 525px;
+    overflow: hidden;
+    .advertise{
+      margin-top: 15px;
+      img{
+        width: 100%;
+        height: 168px;
+      }
+    }
+  }
+  /* 网点查询*/
+  .main-websiteQery{
+    width: 38%;
+    height: 525px;
+    overflow: hidden;
+    border: 1px solid #D5D5D5;
+    /* 共用头部的相关样式*/
+    .pullDown-website{
+      padding: 5px 20px 20px;
+      border-bottom: 1px solid #D5D5D5;
+      &:last-child{
+        border-bottom: none;
+      }
+      .item-title_{
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #4A4A4A;
+        background: transparent;
+      }
+      p{
+        padding-left: 20px;
+        font-size: 12px;
+        color: #9B9B9B;
+        &.location-info{
+          vertical-align: top;
+          background: url("../images/location-icon.png") no-repeat left center/14px 14px;
+        }
+        &.time-info{
+          vertical-align: top;
+          background: url("../images/time-icon.png") no-repeat left center/12px 12px;
+
+        }
+      }
+      &:hover{
+        background: #ecf5ff;
+      }
+      &.hover-bg{
+        background: #ecf5ff;
+      }
+      .less-money{
+        margin-right: 15px;
+        color: #FF2626;
+        font-size: 12px;
+      }
+      .goTp-detail{
+        padding: 4px 6px;
+        font-size: 14px;
+        color: #1882FF;
+        cursor: pointer;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #1882FF;
+      }
+
+    }
+  }
+}
+
+/* 3、下一页*/
+.pagination{
+  li{
+    a {
+      color: #9E9E9E;
+      font-size: 12px;
+    }
+    a.hover-a{
+      background: #1882FF;
+      color: #fff;
+    }
+  }
+
+}
+
+/* 3、首页主体的共有样式*/
+.main-items{
+  /* 标题栏*/
+  .item-title{
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    color: #4A4A4A;
+    font-weight: 600;
+    background: #f7f7f7;
+  }
+  .item-title .more{
+    font-weight: 400;
+    font-size: 16px;
+    color: #9B9B9B;
+    text-align: right;
+    padding-right: 20px;
+    background: url("../images/more-icon.png") no-repeat right center/14px 14px;
+  }
+
+  .main-item{
+    padding: 0 10px;
+    margin: 0 0 20px 0;
+    /* 币种、汇率、限时特惠*/
+    .species{
+      font-size: 20px;
+      color: #4A4A4A;
+      font-weight: 600;
+      line-height: 1;
+      img{
+        width: 30px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+    .rate{
+      color: #FF2626;
+      font-size: 16px;
+    }
+    .hot{
+      img{
+        margin-right: 6px;
+        width: 18px;
+        height: 20px;
+      }
+
+    }
+    /* 取钞城市*/
+    .city-item{
+      color: #4A4A4A;
+      font-size: 16px;
+      margin: 0 0 17px 0;
+
+    }
+    /* 新闻资讯*/
+
+    .news-img{
+      img{
+        width: 148px;
+        height: 108px;
+      }
+    }
+    .news-info{
+      .title{
+        margin: 0 0 15px;
+        font-size: 16px;
+        color: #4A4A4A;
+        font-weight: 600;
+      }
+      .text{
+        margin-bottom: 15px;
+        height: 40px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 14px;
+        color: #666666;
+      }
+      .date-time{
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+  }
+  .main-itemMask{
+    opacity: 0.7;
+    color: #9B9B9B;
+  }
+}
+
+/* 4、底部：兑换流程*/
+.footer-exchangeFlow{
+  height: 200px;
+  background: #f7f7f7;
+
+}
+/* 4、底部：版权*/
+.footer-links{
+  padding: 30px 0 10px;
+  background: #4a4a4a;
+  .footer-link-items{
+    li{
+      font-size: 15px;
+      color: #fff;
+      .footer-item{
+        padding-left: 40%;
+        img{
+          margin-right: 6px;
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+    .downApp{
+      margin-top: -20px;
+      .footer-item{
+        padding-left: 0;
+        font-size: 12px;
+        img{
+          width: 85px;
+          height: 85px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+  .copy-right{
+    text-align: center;
+    font-size: 12px;
+    color: #C6C6C6;
+  }
+}
+
+/*------------------------------关于我们-------------------------------------*/
+.aboutUs-main{
+  background: #f7f7f7;
+  padding-top: 20px;
+  /* 左tab*/
+  .aside-nav{
+    //padding: 0 0;
+
+    .aboutUs-item{
+      height: 60px;
+      line-height: 60px;
+      border-bottom: 1px solid #f7f7f7;
+      font-size: 18px;
+      color: #7E7E7E;
+      background: #fff;
+      text-align: center;
+      -webkit-box-shadow:  0px 4px 10px rgba(175, 175, 175, 0.3);
+      -moz-box-shadow:  0px 4px 10px rgba(175, 175, 175, 0.3);
+      box-shadow:  0px 4px 10px rgba(175, 175, 175, 0.3);
+      a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: #7E7E7E;
+      }
+    }
+    .aboutUs-item:hover{
+      background: #d8eaff;
+      color: #4A4A4A;
+      a{
+        color: #4A4A4A;
+      }
+    }
+    .aboutUs-item.aboutUs-item-hover{
+      background: #d8eaff;
+      color: #4A4A4A;
+      a{
+        color: #4A4A4A;
+      }
+    }
+  }
+  /* 右文章*/
+  .aboutUs-details{
+    min-height: 700px;
+    margin-bottom: 60px;
+    background: #fff;
+    -webkit-box-shadow:  0px 4px 10px rgba(175, 175, 175, 0.3);
+    -moz-box-shadow:  0px 4px 10px rgba(175, 175, 175, 0.3);
+    box-shadow:  0px 4px 10px rgba(175, 175, 175, 0.3);
+    .detail-item{
+      .title{
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .text{
+        margin-top: 20px;
+        font-size: 15px;
+        color: #7E7E7E;
+        text-indent: 30px;
+      }
+    }
+
+  }
+
+}
+
+/*------------------------------弹窗、遮罩层---------------------------------*/
+/* 登录、注册*/
+.fullScreenMask-and-springWindows{
+  //position: fixed;
+  //top: 0;
+  //width: 100%;
+  //height: 100%;
+  //z-index: 7;
+  /* 遮罩层*/
+  .fullScreenMask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+  }
+  /* 弹窗*/
+  .Spring-windows{
+    /* 0、公共弹窗样式*/
+    .springWindowItem{
+      position: fixed;
+      top: 25%;
+      left: 50%;
+      z-index: 8;
+      width: 800px;
+      padding: 0 0;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background: #fff;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      .springItem-left{
+        width: 35%;
+        background: #1882FF;
+        text-align: center;
+        padding: 70px 0;
+        .logo-intro{
+          margin-top: 20px;
+          font-size: 24px;
+          color: #FFFFFF;
+        }
+      }
+      ._springItem_register{
+        padding: 100px 0;
+      }
+      .springItem-right{
+        position: relative;
+        width: 65%;
+        .tabItemTitle{
+          padding: 0px 15px 30px;
+          .LoginSpan{
+            padding: 30px 15px 15px;
+            //padding-top: 20px;
+            color: #7E7E7E;
+            font-size: 18px;
+            cursor: pointer;
+          }
+          .LoginSpan.LoginSpan-active{
+            position: relative;
+            &:before{
+              position: absolute;
+              bottom: -10px;
+              content: '';
+              width: 100px;
+              height: 2px;
+              left: 12%;
+              background: #1882FF;
+            }
+          }
+        }
+        .close-Spring-windows{
+          position: absolute;
+          right: 0;
+          width: 40px;
+          height: 40px;
+          background: url("../images/guanbi-icon.png") no-repeat right top/40px 40px;
+        }
+        .springItemInput{
+          label{
+            color: #7E7E7E;
+            font-size: 16px;
+            font-weight: 400;
+          }
+          .btn-block{
+            margin-top: 30px;
+            color: #fff;
+            background: #1882ff;
+          }
+          .getIdentifyCode-input{
+            display: inline-block;
+            width: 66%;
+          }
+          .getIdentifyCode-btn{
+            margin-top: -4px;
+            width: 30%;
+            color: #1882FF;
+            border: 1px solid #1882FF;
+          }
+        }
+        .userHelp-info{
+          margin-top: 15px;
+          span{
+            color: #7E7E7E;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          .register2{
+            color: #1882FF;
+          }
+          .login2{
+            color: #FF9000;
+
+          }
+        }
+      }
+    }
+    /* 1、登录*/
+    .springWindowItem-login{
+
+    }
+    /* 2、注册*/
+    .springWindowItem._registers_{
+      .springItem-left{
+        padding: 110px 0;
+      }
+      .springItem-right{
+        .tabItemTitle{
+          margin-top: 20px;
+          color: #4A4A4A;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+/* 个人申请申购*/
+.person-application-form{
+  position: fixed;
+  top: 15%;
+  z-index: 8;
+  width: 750px;
+  min-height: 500px;
+  padding-bottom: 30px;
+  background: #fff;
+  .Application-title{
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    background: #1882FF;
+    .title{
+      font-size: 16px;
+      color: #fff;
+    }
+    .Application-close{
+      margin-top: 5px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      background: url("../images/website-close.png") no-repeat center/14px 14px;
+    }
+  }
+  .Application-text{
+    padding: 20px;
+    border-bottom: 1px solid #E9E9E9;
+    .text{
+      text-indent: 20px;
+    }
+  }
+  .Application-checkbox{
+    position: relative;
+    //height: 25px;
+    .Application-checkbox-mask{
+      position: absolute;
+      top: 0;
+      z-index: 8;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+  .button-wrap{
+    margin-top: 15px;
+    position: relative;
+    //background: #D5D5D5;
+    height: 40px;
+    .Application-button-mask{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      background: transparent;
+
+    }
+  }
+
+  .btn{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background: #D5D5D5;
+    color: #fff;
+  }
+  .btn.blue-bg{
+    background: #1882FF;
+  }
+}
+
+/*---------------------------------购汇申请书----------------------------------*/
+.apply-main{
+  background: #f7f7f7;
+  .applyForm-section{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    .apply-title{
+      padding-left: 15px;
+      margin-bottom: 20px;
+      height: 40px;
+      line-height: 40px;
+      background: #d8eaff;
+      font-size: 18px;
+      color: #333333;
+      font-weight: 600;
+      letter-spacing: 1px;
+      -webkit-border-top-left-radius:4px;
+      -moz-border-top-left-radius: 4px;
+      border-top-left-radius: 4px;
+      -webkit-border-top-right-radius:4px;
+      -moz-border-top-right-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    label.control-label{
+      width: 20%;
+      padding-left: 30px;
+      text-align: left;
+      padding-right: 0;
+    }
+    .section-div{
+      margin-top: 4px;
+    }
+    .section-check{
+      margin-right: 8px;
+      vertical-align: text-bottom;
+    }
+    .apply-userHelp-infos{
+      padding-left: 0;
+      line-height: 16px;
+      color: #FF2626;
+    }
+  }
+  .applyForm-section-agree{
+    .applyForm-checkbox{
+      margin-top: -10px;
+      color: #7E7E7E;
+
+    }
+    .applyForm-Clause{
+      margin: 10px 0 30px 0;
+      padding-left: 20px;
+      span{
+        color: #1882FF;
+      }
+      .vertical-line{
+        margin: 0 10px;
+        display: inline-block;
+        width: 1px;
+        height: 15px;
+        vertical-align: text-bottom;
+        background: #D5D5D5;
+      }
+    }
+    .btn{
+      height: 50px;
+      background: #D5D5D5;
+      color: #fff;
+      font-size: 18px;
+    }
+
+  }
+
+}
+
+
+
+
+
